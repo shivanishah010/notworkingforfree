@@ -1,0 +1,236 @@
+/* GLOBAL STYLES */
+@font-face {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/worksans/v8/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Merriweather";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/merriweather/v22/u-440qyriQwlOrhSvowK_l5-fCZMdeX3rg.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+body {
+  background-color: lightgray;
+  font-size: 20px;
+  font-family: "Work Sans", sans-serif;
+  font-weight: normal;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#navbar {
+  background-color: rgb(46, 27, 27);
+  width: 100%;
+  position: fixed;
+  height: 100px;
+  display: inline-block;
+}
+
+h2 {
+  color: whitesmoke;
+  font-family: "Merriweather", serif;
+  padding-left: 35px;
+  float: left;
+  position: relative;
+}
+
+ul {
+  padding-right: 35px;
+  position: relative;
+}
+
+li {
+  display: inline;
+  color: whitesmoke;
+  font-size: 0.7rem;
+  padding-left: 15px;
+  padding-top: 25px;
+  float: right;
+  position: relative;
+}
+
+/* GRID */
+
+.grid {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  max-width: 800px;
+  height: 600px;
+  column-gap: 20px;
+  row-gap: 5px;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+  padding: 130px 10px 0 10px;
+}
+
+.highlight {
+  background-color: rgb(46, 27, 27);
+  color: whitesmoke;
+  padding: 0 5px;
+}
+
+.header {
+  grid-row: 1 / 2;
+  grid-column: 1 / span 2;
+}
+
+.intro {
+  font-family: "Work Sans", serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 00.8rem;
+}
+
+h1 {
+  font-family: "Merriweather", sans-serif;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.number {
+  font-size: 0.8rem;
+}
+
+p {
+  line-height: 1.2rem;
+}
+
+.one {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+}
+
+.two {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+}
+
+.three {
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 1;
+}
+
+.four {
+  grid-row: 3 / span 1;
+  grid-column: 2 / span 1;
+}
+
+/* MOBILE SCREEN */
+
+@media only screen and (min-width: 600px) and (max-width: 640px) {
+  .grid {
+    display: grid;
+    grid-template: repeat(3, 1fr) / 50% 50%;
+    min-height: 200px;
+    max-width: 80%;
+    max-height: auto;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    grid-row-gap: 5px;
+    align-items: start;
+    padding: 150px 20px 0 20px;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #navbar {
+    height: 65px;
+  }
+
+  .header h2 {
+    margin-top: 20px;
+    float: none;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: normal;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+  }
+
+  .menu li {
+    display: none;
+  }
+
+  .grid {
+    display: grid;
+    grid-template: repeat(3, 1fr) / 1fr;
+    max-width: 80%;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    padding: 300px 20px 20px 20px;
+    grid-row-gap: 5px;
+    align-items: start;
+  }
+
+  .header {
+    grid-row: 1 / 2;
+    grid-column: 1 / span 1;
+  }
+
+  .one {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+  }
+
+  .two {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1;
+  }
+
+  .three {
+    grid-row: 4 / span 1;
+    grid-column: 1 / span 1;
+  }
+
+  .four {
+    grid-row: 5 / span 1;
+    grid-column: 1 / span 1;
+  }
+
+  .intro {
+    font-family: "Work Sans", serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 0.6rem;
+  }
+
+  h1 {
+    font-family: "Merriweather", sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .number {
+    font-size: 0.6rem;
+  }
+
+  p {
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+  }
+}
